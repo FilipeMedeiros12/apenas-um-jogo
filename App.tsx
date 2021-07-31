@@ -1,32 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import AppLoading from 'expo-app-loading';
+import { SignIn } from './src/screens/SignIn';
+import { useFonts } from 'expo-font';
+import { Inter_400Regular, Inter_500Medium,  } from '@expo-google-fonts/inter';
+import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 
+export default function App(){
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_500Medium,
+    Rajdhani_500Medium,
+    Rajdhani_700Bold,
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Opa meu jovem! </Text>
-      <Image style={styles.image} source={require("./assets/flamengo.png")} />
-      <StatusBar style="auto" />
-    </View>
-  );
+  });
+if(!fontsLoaded){
+  return<AppLoading/>
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  },
-  text:{
-    color:'red',
-    
-  },
-  image:{
-  width: 200,
-  height: 200,
-  }
-});
+  return <SignIn/>;
+}
