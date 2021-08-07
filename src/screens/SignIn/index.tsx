@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-
+import { ButtonIcon } from '../../components/ButtonIcon';
 import IllustrationImg from '../../assets/illustration.png';
-import {styles} from './styles'
+import { styles } from './styles'
 
 export function SignIn() {
   return (
@@ -12,7 +12,20 @@ export function SignIn() {
         style={styles.image}
         resizeMode="stretch"
       />
-      <Text>Opa meu chegado  </Text>
+      <View style={styles.content}>
+
+        <Text style={styles.title} > Conecte-se {'\n'}
+          e organize suas {'\n'}
+          jogatinas
+        </Text>
+        <Text style={styles.subtitle}>
+          Crie gupos para jogar seus games {'\n'}
+          favoritos com seus amigos {'\n'}
+        </Text>
+        <ButtonIcon
+          title='Entre com Discord'
+        />
+      </View>
     </View>);
 }
 
