@@ -57,7 +57,7 @@ export function Home() {
       />
 
       <View style={styles.content}>
-        <ListHeader title="partidas agendadas" subtitle="Total 2" />
+        <ListHeader title="partidas agendadas" subtitle="Total 10" />
 
         <FlatList
           data={appointments}
