@@ -1,6 +1,13 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
+import { theme } from '../../global/styles/themes'
+
 export const styles = StyleSheet.create({
-  container:{
-    flex:1
-  } 
+  image: {
+    width: 64,
+    height: 64,
+    borderRadius: 8,
+    marginRight: 20
+  },
+
+
 })

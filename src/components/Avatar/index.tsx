@@ -1,12 +1,22 @@
-import React from "react";
-import { View, Text } from "react-native";
-import{styles } from './styles'
+import React from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
+import { theme } from '../../global/styles/themes';
+import { Image } from 'react-native';
 
-export function Avatar() {
-  return(
-   <View style={styles.container}>
-     <text>Avatar
-     </text>
-   </View>
+import { styles } from './styles';
+
+type Props = {
+  urlImage: string;
+};
+
+export function Avatar({ urlImage }: Props) {
+  const { secondary50, secondary70 } = theme.colors;
+  return (
+    <LinearGradient
+      style={styles.container}
+      colors={[secondary50, secondary70]}
+    >
+      <Image source={{ uri: urlImage }} style={styles.avatar} />
+    </LinearGradient>
   );
 }

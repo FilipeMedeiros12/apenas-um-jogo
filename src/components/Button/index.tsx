@@ -5,7 +5,7 @@ import{styles } from './styles'
 export function Button() {
   return(
    <View style={styles.container}>
-     <text>Button</text>
+     <Text>Button</Text>
    </View>
   );
 }

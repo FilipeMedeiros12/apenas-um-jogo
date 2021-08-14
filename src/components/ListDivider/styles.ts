@@ -1,6 +1,12 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
+import { theme } from '../../global/styles/themes'
+
 export const styles = StyleSheet.create({
-  container:{
-    flex:1
-  } 
+  container: {
+    width: '80%',
+    height: 1,
+    backgroundColor: theme.colors.secondary40,
+    marginVertical: 21,
+    alignSelf: 'flex-end',
+  }
 })
