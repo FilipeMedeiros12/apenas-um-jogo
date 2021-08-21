@@ -9,9 +9,11 @@ import { ButtonAdd } from '../../components/ButtonAdd';
 import { Profile } from '../../components/Profile';
 
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
   const [category, setCategory] = useState('');
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -39,6 +41,13 @@ export function Home() {
         'É hoje que vamos chegar ao challenger sem perder uma partida da md10',
     },
   ];
+  
+function handleAppointmentDetails(){
+  navigation.navigate('AppointmentDetails');
+};
+function handleAppointmentCreate(){
+  navigation.navigate('AppointmentCreate');
+}
 
   function handlerCategorySelector(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
@@ -48,7 +57,7 @@ export function Home() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd  onPress={handleAppointmentCreate}    />
       </View>
 
       <CategorySelect
@@ -64,7 +73,8 @@ export function Home() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <>
-              <Appointment data={item} />
+              <Appointment data={item} onPress={handleAppointmentDetails}
+                />
             </>
           )}
           ItemSeparatorComponent={() => <ListDivider />}
