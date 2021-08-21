@@ -36,13 +36,8 @@ export function AppointmentCreate() {
   return (
     <Background>
       <Header
-        title="Detalhes"
-        action={
-          <BorderlessButton>
-            <Fontisto name="share" size={24} color={theme.colors.primary} />
-          </BorderlessButton>
-        }
-
+        title="Agendar partidas"
+        
 
       />
 
