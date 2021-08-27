@@ -1,48 +1,107 @@
 import React, { useState } from "react";
-import { LinearGradient } from "react-native-svg";
-import { BorderlessButton } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
-import { Fontisto } from "@expo/vector-icons";
-import { ImageBackground, Text, View, FlatList } from "react-native";
+import { Text, View, ScrollView, KeyboardAvoidingView, Platform } from "react-native";
+import { RectButton } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
 
 import { Header } from "../../components/Header";
-import { Member } from "../../components/Member";
+import { GuildIcon } from "../../components/GuildIcon";
 import { Background } from "../../components/Background";
+import { SmallInput } from "../../components/SmallInput";
+import { TextArea } from "../../components/TextArea";
+import { Button } from "../../components/Button";
+import { CategorySelect } from "../../components/CategorySelect";
 
 import { theme } from "../../global/styles/themes";
 import { styles } from "./styles";
-import BannerImg from "../../assets/banner.png"
-import { ListHeader } from "../../components/ListHeader";
-import { ListDivider } from "../../components/ListDivider";
-import { ButtonIcon } from "../../components/ButtonIcon";
+import { ModalView } from "../../components/ModalView";
 
 export function AppointmentCreate() {
-  const members = [
-    {
-      id: '1',
-      username: 'Filipe',
-      avatar_url: 'https://github.com/filipemedeiros12.png',
-      status: 'online',
-    },
-    {
-      id: '2',
-      username: 'Dione',
-      avatar_url: 'https://github.com/Dione-Vianna.png',
-      status: 'offline',
-    },
+  const [category, setCategory] = useState('');
+  const [openGuildsModa, setOpenGuildsModal] = useState(false);
 
-  ]
+  function handleOpenGuilds() {
+    setOpenGuildsModal(true)
+  }
+  function handleCloseGuilds() {
+    setOpenGuildsModal(false);
+  }
 
   return (
-    <Background>
-      <Header
-        title="Agendar partidas"
-        
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <Background>
+        <ScrollView>
+          <Header title="Agendar partidas" />
+          <Text style={[
+            styles.label, { marginLeft: 24, marginTop: 36, marginBottom: 18 },
+          ]}>
+            Categoria
+          </Text>
+          <CategorySelect
+            hasCheackBox
+            setCategory={setCategory}
+            categorySelect={category}
+          />
+          <View style={styles.form}>
+            <RectButton>
 
-      />
+              <View style={styles.select}>
+                {<GuildIcon />}
+
+                <View style={styles.selectBody}>
+                  <Text style={styles.label}>
+                    Selecione um servidor
+                  </Text>
+                </View>
+                <Feather
+                  name="chevron-right"
+                  color={theme.colors.heading}
+                  size={18}
+                />
+
+              </View>
+            </RectButton>
+            <View style={styles.field}>
+              <View>
+                <Text style={styles.label}>Dia e Mês</Text>
+                <View style={styles.column}>
+                  <SmallInput maxLength={2} />
+                  <Text style={styles.divider}>/</Text>
+                  <SmallInput maxLength={2} />
+                </View>
+              </View>
+              <View>
+                <Text style={styles.label}>Horas e Minutos</Text>
+                <View style={styles.column}>
+                  <SmallInput maxLength={2}/>
+                  <Text style={styles.divider}>:</Text>
+                  <SmallInput maxLength={2} />
+
+                </View>
+              </View>
+            </View>
+            <View style={[styles.field, {marginBottom: 12}]}>
+              <Text style={styles.label}>Descrição</Text>
+              <Text style={styles.caracteresLimit}>Max 100 caracteres</Text>
+            </View>
+            <TextArea
+            multiline
+            maxLength={100}
+            numberOFLines={5}
+            autoCorrect={false}
+            />
+            <View style={styles.footer}>
+              <Button title="Agendar" />
+
+            </View>
 
 
-    </Background>
-
+          </View>
+        </ScrollView>
+      </Background>
+    </KeyboardAvoidingView>
   )
+
 }
