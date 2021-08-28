@@ -1,12 +1,11 @@
-import { StyleSheet } from 'react-native'
-import { theme } from '../../global/styles/themes'
+import { StyleSheet } from 'react-native';
+import { theme } from '../../global/styles/themes';
 
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-
   },
   title: {
     fontFamily: theme.fonts.title700,
@@ -20,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   status: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   bulletStatus: {
     width: 8,
@@ -28,5 +27,4 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     marginRight: 9
   }
-
-})
+});
