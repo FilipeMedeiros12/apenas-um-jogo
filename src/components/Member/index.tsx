@@ -8,7 +8,7 @@ import {
 import { styles } from './styles';
 
 import { Avatar } from '../Avatar';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 
 export type MemberProps = {
   id: string;

@@ -10,7 +10,7 @@ import {
 import { useAuth } from '../../hooks/auth';
 
 import IllustrationImg from '../../assets/illustration.png';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
 
 import { ButtonIcon } from '../../components/ButtonIcon';

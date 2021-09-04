@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import { Text, View } from 'react-native';
 
-import { theme } from '../../global/styles/themes';
-import { styles } from './styles';
+import { theme } from '../../global/styles/theme';
+import { styles } from './style';
 
 type Props = {
   title: string;

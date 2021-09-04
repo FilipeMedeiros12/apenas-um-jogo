@@ -8,7 +8,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 
 import { styles } from './styles';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 
 import { GuildIcon } from '../GuildIcon';
 

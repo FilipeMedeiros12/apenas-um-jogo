@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 import { styles } from './styles';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 
 export function Load(){
   return (

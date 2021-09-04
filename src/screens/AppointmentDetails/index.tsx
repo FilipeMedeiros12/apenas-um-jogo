@@ -17,7 +17,7 @@ import {
 import BannerImg from '../../assets/banner.png';
 
 import { styles } from './styles';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 import { api } from '../../services/api';
 
 import { AppointmentProps } from '../../components/Appointment';

@@ -54,10 +54,10 @@ function AuthProvider({ children }: AuthProviderProps) {
   async function signIn() {
     try {
       setLoading(true);
-      const uri = 'https://auth.expo.io/@kaitohunter/game-play';
-
-      const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${uri}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
-
+      //const uri = 'https://auth.expo.io/@anonymous/apenas-um-jogo-2b1b4ffc-df8a-4b20-9040-110063905544';
+      //const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${uri}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+      const authUrl = 'https://discord.com/api/oauth2/authorize?client_id=881172374899290113&redirect_uri=https%3A%2F%2Fauth.expo.io%2F%40anonymous%2Fapenas-um-jogo-2b1b4ffc-df8a-4b20-9040-110063905544&response_type=token&scope=identify%20email%20connections%20guilds'
+    
       const { type, params } = (await AuthSession.startAsync({
         authUrl,
       })) as AuthorizationResponse;

@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 import { View, Text } from 'react-native';
 
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
 import PlayerSvg from '../../assets/player.svg';
 import CalendarSvg from '../../assets/calendar.svg';

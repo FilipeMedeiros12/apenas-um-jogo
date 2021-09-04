@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
-import { theme } from '../../global/styles/themes';
+import { theme } from '../../global/styles/theme';
 import { styles } from './styles';
 
 import { CategorySelect } from '../../components/CategorySelect';
